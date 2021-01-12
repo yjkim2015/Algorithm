@@ -39,10 +39,6 @@ public class UniqueEmailAddresses {
 	}
 	
 	public static String makeDomainName(String str)  {
-		
 		return str.substring(str.indexOf("@")).trim();
 	}
-	
-	
-	
 }
