@@ -18,7 +18,7 @@ public class FindAnagramsMapping {
 	
 	public static void solve(int[] A, int[] B) {
 		
-		Map map = new HashMap<>();
+		Map<Integer, Integer> map = new HashMap<>();
 		int result[] = new int[A.length];
 		for ( int i = 0 ; i < B.length; i++ ) {
 			map.put(B[i], i);
