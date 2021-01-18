@@ -1,6 +1,7 @@
 package com.algorithm.test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,15 +23,33 @@ public class GroupAnagrams {
 		solve(input);
 	}
 	public static void solve(String[] input) {
-
-	}
-	
-	public static boolean check(int[] one, int[] two) {
+		Map<String, List<String>> map = new HashMap<>();
 		
-		for ( int i = 0 ; i < one.length; i++ ) {
-			if ( one[i] != two[i] ) return false;
+		for ( String one : input ) {
+			
+			char[] arr = new char[one.length()];
+			arr = one.toCharArray();
+			Arrays.sort(arr);
+			StringBuilder result = new StringBuilder(new String(arr));
+			if ( map.get(result.toString()) == null )  {
+				List<String> list = new ArrayList<>();
+				list.add(one);
+				map.put(result.toString(),list);
+			}
+			else {
+				List<String> list = map.get(result.toString());
+				list.add(one);
+				map.put(result.toString(), list);
+			}
 		}
 		
-		return true;
+		for ( String key : map.keySet() ) {
+			List<String> list = map.get(key);
+			System.out.println("key : " + key);
+			for ( int i = 0 ; i < list.size(); i++ ) {
+				System.out.print(list.get(i) + " ");
+			}
+			System.out.println("");
+		}
 	}
 }
