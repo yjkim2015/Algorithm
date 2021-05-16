@@ -6,22 +6,65 @@ package com.algorithm.test;
 public class MaximumSubarray {
 
 	public static void main(String[] args) {
-		int[] nums =  {-2,1,-3,4,-1,2,1,-5,4};
-		
-		System.out.println(solve(nums));
+		int[] nums =  {-2,1,-3,4,-1,2,1,-5,3};
+		solve(nums);
 	}
 	
-	public static int solve(int[] nums) {
-		int max = nums[0];
+	public static void solve(int[] nums) {
 		int current = nums[0];
-		for ( int i = 1 ; i < nums.length; i++ ) {
+		int max = nums[0];
+		for ( int i = 1; i < nums.length; i++ ) {
 			if ( current < current + nums[i] ) {
 				current = nums[i];
 			}
-			max = Math.max(max, current+nums[i]);
-			System.out.println("current : " + current + " max : " + max);
+			max = Math.max(current+nums[i], max);
 		}
-		
-		return max;
+		System.out.println(max);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	public static void main(String[] args) {
+//		int[] nums =  {-2,1,-3,4,-1,2,1,-5,4};
+//		
+//		System.out.println(solve(nums));
+//	}
+//	
+//	public static int solve(int[] nums) {
+//		int max = nums[0];
+//		int current = nums[0];
+//		for ( int i = 1 ; i < nums.length; i++ ) {
+//			if ( current < current + nums[i] ) {
+//				current = nums[i];
+//			}
+//			max = Math.max(max, current+nums[i]);
+//			System.out.println("current : " + current + " max : " + max);
+//		}
+//		
+//		return max;
+//	}
 }
