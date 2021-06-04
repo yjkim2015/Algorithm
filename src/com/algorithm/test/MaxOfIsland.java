@@ -47,7 +47,7 @@ public class MaxOfIsland {
 		grid[x][y] = 0;
 		area++;
 		for ( int[] dir : dirs ) {
-			area = dfs(grid, x+dir[0], y+dir[0], area);
+			area = dfs(grid, x+dir[0], y+dir[1], area);
 		}
 		
 		return area;
